@@ -1,44 +1,55 @@
 
 :root {font-size: 100%;}
-body {
+div.conceptmd {
   font-size: 0.8em;
   line-height: 1.4em;
 }
 @media screen and (min-width: 20em) {
-  body {
+  div.conceptmd {
     font-size: calc(0.8em + (1.1 - 0.8) * ((100vw - 20em) / (80 - 20)));
     line-height: calc(1.4em + (1.8 - 1.4) * ((100vw - 20em) / (80 - 20)));
   }
 }
 
 @media (min-width: 80em) {
-  body {
+  div.conceptmd {
     font-size: 1.1em;
     line-height: 1.4em;
   }
 }
-body {
+
+div.conceptmd {
   margin-left: 10%;
   margin-right: 7%;        
 }
 
-h3.conceptmdh3 {
+div.conceptmd h3 {
   font-family:arial;
   font-size:1.5em;
 }
-p.conceptmdp01 {
+div.conceptmd p {
   font-family:arial;
 }
-table {
+div.conceptmd table {
   width:100%;
   table-layout: fixed;
   border-spacing: 0.25em 0;
   font-family:arial;
   font-size:1.1em;
 }
-th.conceptmdth0 {
+
+div.conceptmd td {
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  vertical-align: text-top;
+}
+
+div.conceptmd td.td0 {
   font-size:1.2em;
   text-align: center;
+  vertical-align: middle;
   font-weight: bold; 
   text-decoration: underline;
   padding-left: 1em;
@@ -46,27 +57,22 @@ th.conceptmdth0 {
   padding-top: 1em;
   padding-bottom: 1em;
 }
-td.conceptmdtd0 {
-  padding-left: 0.2em;
-  padding-right: 0.2em;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
-  vertical-align: top;
-}
-td.conceptmdtd1 {
+div.conceptmd td.td1 {
   font-size:1.2em;
   text-align: center;
+  vertical-align: middle;
   font-weight: bold; 
   padding-left: 1em;
   padding-right: 1em;
   padding-top: 1em;
   padding-bottom: 1em;
-  background-color: #BFBFBF; 
+  background-color: #506E91; 
   color: #ffffff;
 }
-td.conceptmdtd2 {
+div.conceptmd td.td2 {
   font-size:1.2em;
   text-align: center;
+  vertical-align: middle;
   font-weight: bold; 
   padding-left: 1em;
   padding-right: 1em;
@@ -76,9 +82,8 @@ td.conceptmdtd2 {
   color: #ffffff;
 }
 
-ul.conceptmdlist0 {}
-ul.conceptmdlist1 {font-size:0.9em;}
-ol.conceptmdlist0 {}
-ol.conceptmdlist1 {font-size:0.9em;}
-li.conceptmdlistel0 {margin-bottom: 0.5em;}
+div.conceptmd ul.sublist {font-size:0.9em;}
+div.conceptmd ol.sublist {font-size:0.9em;}
+
+div.conceptmd li {margin-bottom: 0.5em;}
       
