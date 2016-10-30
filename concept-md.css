@@ -80,10 +80,13 @@ div.conceptmd td.td2 {
   color: #ffffff;
 }
 div.conceptmd td.arrow {
-  width:2em;
-  height:1.5em;
+  width:3em;
+  height:3em;
 }
-
+div.conceptmd td.arrow img {
+  max-width:100%;
+  max-height:100%;
+}
 
 div.conceptmd ul {text-align:left;}
 div.conceptmd ol {text-align:left;}
