@@ -71,9 +71,25 @@ The following table
 
 Is rendered as: (insert screenshot)
 
+Here's a more complex table showing more of the capabilities:
+```
+|--------------------------|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+|                          |        Column title 1         |            Column title 2                   |
+|=========================>|---------------------------  ->|---------------------------------------------|
+|      A 3-row arrow       |      This item leads to       |  *This bold item* (use markdown internally) |
+|XXXXXXXXXXXXXXXXXXXXXXXXXX|-------------------------------X---------------------------------------------|
+|                          |  These two columns are joined together and use escape to print a pipe: \|   |
+|XXXXXXXXXXXXXXXXXXXXXXXXXX|^-----------------------------:|:---^---------------------------------------:|
+|                          | Aligned right and pointing up | Justified and pointing up with a long arrow |
+|_________________________>|>=============================>|>============================================|
+| De-emphasized arrow item | Emphasized continuation item  |       Emphasized receiving item             |
+|------------https://raw.githubusercontent.com/ptfmiller/concept-md/master/concept-md.css----------------|
+```
+This renders to: (insert screenshot)
+
 The structure of the markdown is pairs of lines. The first line specifies structure of the cells and the second specifies the contents. The bottom row is optional and allows the author to specify a style file to replace the defaults. 
 
-The structure rows consist of **delimiters** `X` or `|` separated by **cell styling information** `=`, `_`, `+`, `-`, `X`, `:`, `>`, `<`, `V`, and `^`.
+The structure rows consist of **delimiters** `X` or `|` separated by **cell styling information** `=`, `_`, `+`, `-`, `XX`, `:`, `>`, `<`, `V`, and `^`. All other characters are ignored.
 
 The content rows consist of the text that will occupy the cells, separated by `|` delimiters.
 
@@ -88,13 +104,13 @@ The content rows consist of the text that will occupy the cells, separated by `|
 + `_`: Second-strongest emphasis on a cell. Suggested for de-emphasis among similar elements
 + `~`: Light emphasis on a cell. Good as a header.
 + `-`: Standard cell with no emphasis
-+ `X`: Indicate that this cell should be merged with the cell above. The engine will look for one fewer cell of content on the next line. 
++ `XX`: Indicate that this cell should be merged with the cell above. You can write additional X's to fill space--they will be ignored.
 + `:`: Alignment indicator. Text will be aligned left if this occurs immediately after the starting delimiter, right if it occurs immediately before the ending delimiter, justified if both, and centered if it is absent.
 + `>`, `<`, `V`, and `^`: Insert arrows. 
   + Arrows with no `-` tails will shape the cell itself, but can only apply to emphasis and strong emphasis cells. These types of arrows are indicated right after the starting delimiter of a cell (to affect the left and top sides of the cell) and right before the ending delimiter of a cell (to affect the right and bottom sides of a cell)
   + Arrows with a `-` tail will insert an arrow image between cells. There are three lengths of each directional arrow, and the length corresponds to the number of `-` characters coming before (or after in the case of `<` arrows) the arrow indicator. The arrow will be assumed to be pointing outward, away from the cell, and will be placed accordingly, unless: 
     + For right and down arrows, the indicator comes right after the starting delimiter of the cell (or after the `:` indicator if there is alignment specified)
-    + FOr left and up arrows, the indicators comes right before the starting delimiter of the cell (or before the `:` indicator if there is alignment specified)
+    + For left and up arrows, the indicators comes right before the starting delimiter of the cell (or before the `:` indicator if there is alignment specified)
 
 # Remaining challenges
 
