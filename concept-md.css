@@ -82,6 +82,7 @@ div.conceptmd td.td2 {
 div.conceptmd td.arrow {
   width:3em;
   height:3em;
+  vertical-align: middle;
 }
 div.conceptmd td.arrow img {
   max-width:100%;
