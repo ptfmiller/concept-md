@@ -49,7 +49,52 @@ Concept-markdown is appropriate for blogs, consulting materials, ebooks, emails,
 
 # Usage
 
-*under development*
+There are three features that concept-md adds to tables:
+
++ Emphasis to cells
++ Merging of adjacent cells
++ Arrows between cells or as part of the cell
+
+The following table
+
+```
+|>===========>|>===========>|>===========>|
+|     2016    |     2017    |     2018    |
+|-------------|-------------|-------------|
+| 2016 item 1 | 2017 item 1 | 2018 item 1 |
+|-------------|-------------|-------------|
+| 2016 item 2 | 2017 item 2 | 2018 item 2 |
+|~~~~~~~~~~~~~X~~~~~~~~~~~~~X~~~~~~~~~~~~~|
+|          Concluding statement           |
+|https://raw.githubusercontent.com/ptfmiller/concept-md/master/concept-md.css|
+```
+
+Is rendered as: (insert screenshot)
+
+The structure of the markdown is pairs of lines. The first line specifies structure of the cells and the second specifies the contents. The bottom row is optional and allows the author to specify a style file to replace the defaults. 
+
+The structure rows consist of **delimiters** `X` or `|` separated by **cell styling information** `=`, `_`, `+`, `-`, `X`, `:`, `>`, `<`, `V`, and `^`.
+
+The content rows consist of the text that will occupy the cells, separated by `|` delimiters.
+
+### Delimiters
+
++ `|`: this is the standard delimiter and marks the boundary between two cells' styling.
++ `X`: this is delimiter indicates that two horizontally-adjacent cells will be merged. The engine will look for one fewer cell of content on the next line.
+
+### Cell styling
+
++ `=`: Strongest emphasis on a cell
++ `_`: Second-strongest emphasis on a cell. Suggested for de-emphasis among similar elements
++ `~`: Light emphasis on a cell. Good as a header.
++ `-`: Standard cell with no emphasis
++ `X`: Indicate that this cell should be merged with the cell above. The engine will look for one fewer cell of content on the next line. 
++ `:`: Alignment indicator. Text will be aligned left if this occurs immediately after the starting delimiter, right if it occurs immediately before the ending delimiter, justified if both, and centered if it is absent.
++ `>`, `<`, `V`, and `^`: Insert arrows. 
+  + Arrows with no `-` tails will shape the cell itself, but can only apply to emphasis and strong emphasis cells. These types of arrows are indicated right after the starting delimiter of a cell (to affect the left and top sides of the cell) and right before the ending delimiter of a cell (to affect the right and bottom sides of a cell)
+  + Arrows with a `-` tail will insert an arrow image between cells. There are three lengths of each directional arrow, and the length corresponds to the number of `-` characters coming before (or after in the case of `<` arrows) the arrow indicator. The arrow will be assumed to be pointing outward, away from the cell, and will be placed accordingly, unless: 
+    + For right and down arrows, the indicator comes right after the starting delimiter of the cell (or after the `:` indicator if there is alignment specified)
+    + FOr left and up arrows, the indicators comes right before the starting delimiter of the cell (or before the `:` indicator if there is alignment specified)
 
 # Remaining challenges
 
@@ -57,6 +102,8 @@ Concept-markdown is appropriate for blogs, consulting materials, ebooks, emails,
 
 + GFM
 + Wordpress
+
+### Find a good implementation host for the meantime
 
 ### Nail down the name
 
