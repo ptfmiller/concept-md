@@ -44,11 +44,11 @@ div.conceptmd td {
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   vertical-align: text-top;
+  text-align: center;
 }
 
 div.conceptmd td.td0 {
   font-size:1.2em;
-  text-align: center;
   vertical-align: middle;
   font-weight: bold; 
   text-decoration: underline;
@@ -59,7 +59,6 @@ div.conceptmd td.td0 {
 }
 div.conceptmd td.td1 {
   font-size:1.2em;
-  text-align: center;
   vertical-align: middle;
   font-weight: bold; 
   padding-left: 1em;
@@ -71,7 +70,6 @@ div.conceptmd td.td1 {
 }
 div.conceptmd td.td2 {
   font-size:1.2em;
-  text-align: center;
   vertical-align: middle;
   font-weight: bold; 
   padding-left: 1em;
@@ -81,7 +79,18 @@ div.conceptmd td.td2 {
   background-color: #003A6F; 
   color: #ffffff;
 }
+div.conceptmd td.arrow {
+  width:3em;
+  height:3em;
+  vertical-align: middle;
+}
+div.conceptmd td.arrow img {
+  max-width:100%;
+  max-height:100%;
+}
 
+div.conceptmd ul {text-align:left;}
+div.conceptmd ol {text-align:left;}
 div.conceptmd ul.sublist {font-size:0.9em;}
 div.conceptmd ol.sublist {font-size:0.9em;}
 
